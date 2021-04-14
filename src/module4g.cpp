@@ -19,18 +19,20 @@ int module4g::initModule()
 {
   int initFlag = 0;
   /*****************************
-  * Configuration of 4g module
+  * Configuration of 4g module,
+  * See details in docs/4G_Module_Brief.md
   ******************************/
   if(this -> sendSetting("WKMODE=1"))
     if(this -> sendSetting("GPRSMODE=3"))
       if(this -> sendSetting("CHMODE=0"))
         if(this -> sendSetting("DBGMODE=0"))
-          if(this -> sendSetting("DATAID=0"))
-            if(this -> sendSetting("SERVER1=0,49.232.152.70,3389"))
-              if(this -> sendSetting("REGPKG=0"))
-                if(this -> sendSetting("DATAMD=0"))
-                  if(this -> sendSetting("GPSCFG=4,0"))
-                    initFlag = 1;
+          if(this -> sendSetting("DTUID=" + this -> id))
+            if(this -> sendSetting("DATAID=0"))
+              if(this -> sendSetting("SERVER1=0,49.232.152.70,3389"))
+                if(this -> sendSetting("REGPKG=0"))
+                  if(this -> sendSetting("DATAMD=0"))
+                    if(this -> sendSetting("GPSCFG=4,0"))
+                      initFlag = 1;
   return initFlag;
 }
 
