@@ -64,7 +64,7 @@ Notice: The 4G Module requires a valid connection to your server, please setup y
    module4g m4g(rx, tx, baud, id);
    ```
 
-3. `int initModule()`: Initialize 4G module to default work mode. See details in `4G_Module_Brief.md`. Return 1 if initialized successfully, else return 0. Usage:
+3. `int initModule()`: Initialize 4G module to default work mode. See details in `docs/4G_Module_Brief.md`. Return 1 if initialized successfully, else return 0. Usage:
 
    ```c++
    void setup()
