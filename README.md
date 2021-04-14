@@ -64,7 +64,7 @@ Notice: The 4G Module requires a valid connection to your server, please setup y
    module4g m4g(rx, tx, baud);
    ```
 
-3. `int initModule()`: Initialize 4G module to default work mode. See details in `4G_Module_Brief.md`. Usage:
+3. `int initModule()`: Initialize 4G module to default work mode. See details in `4G_Module_Brief.md`. Return 1 if initialized successfully, else return 0. Usage:
 
    ```c++
    void setup()
@@ -80,9 +80,67 @@ Notice: The 4G Module requires a valid connection to your server, please setup y
    }
    ```
 
-4. 
+4. `int sendSetting(String setting)`: Send a setting string to 4G module. Return 1 if succeed, else return 0. Usage:
 
-## More optional sections
+   ``` c++
+   void loop()
+   {
+       String setting = "WKMODE=0";  //Set work mode to 0;
+       if(m4g.sendSetting(setting))  //m4g is a 4G module defined and initialized before;
+       {
+           //TODO: Handle success;
+       }
+       else
+       {
+           //TODO: Handle failure;
+       }
+   }
+   ```
+
+5. `String sendQuery(String query)`: Send a setting string to 4G module. Return response from 4G module if succeed, else return "\0". Usage:
+
+   ``` c++
+   void loop()
+   {
+       String query = "DTUID";  //Query ID of DTU;
+       String res = m4g.sendSetting(query);  //m4g is a 4G module defined and initialized before;
+       if(res != "\0")
+       {
+           //TODO: Handle success;
+       }
+       else
+       {
+           //TODO: Handle failure;
+       }
+   }
+   ```
+
+6. `String sendData(String mdata)`: Send data to 4G module, and send it to server. Return server's response. Usage:
+
+   ```c++
+   void loop()
+   {
+       String mdata = "data_to_be_sent_to_server_in_JSON";
+       String res = m4g.sendData(mdata);  //m4g is a 4G module defined and initialized before;
+       switch(res)
+       {
+           case CASE1:
+               //TODO: Handle CASE1;
+               break;
+           case CASE2:
+               //TODO: Handle CASE2;
+               break;
+               .
+               .
+               .
+           default:
+               //TODO: Handle default;
+               break;
+       }
+   }
+   ```
+
+   
 
 ## Contributing
 
