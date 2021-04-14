@@ -80,7 +80,7 @@ Notice: The 4G Module requires a valid connection to your server, please setup y
    }
    ```
 
-   
+4. 
 
 ## More optional sections
 
