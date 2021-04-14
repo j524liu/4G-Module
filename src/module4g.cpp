@@ -1,15 +1,17 @@
 #include "module4g.h"
 
-module4g::module4g(SoftwareSerial * serial)
+module4g::module4g(SoftwareSerial * serial, String id)
 {
   mSerial = serial;
+  this -> id = id;
 //  Serial.print("Soft READY\n");
 }
 
-module4g::module4g(uint8_t rx, uint8_t tx, int baud)
+module4g::module4g(uint8_t rx, uint8_t tx, int baud, String id)
 {
   mSerial = new SoftwareSerial(rx, tx);
   mSerial -> begin(baud);
+  this -> id = id;
 //  Serial.print("Soft READY\n");
 }
 
@@ -84,4 +86,9 @@ String module4g::sendData(String mdata)
     delay(2);
   }
   return rst;
+}
+
+String module4g::getId()
+{
+  return this -> id;
 }

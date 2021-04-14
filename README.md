@@ -51,17 +51,17 @@ Notice: The 4G Module requires a valid connection to your server, please setup y
 
 ## API
 
-1. `module4g(SoftwareSerial * serial)`: Constructor, construct a 4G Module binded to a software serial port. Usage:
+1. `module4g(SoftwareSerial * serial, String id)`: Constructor, construct a 4G Module binded to a software serial port. Usage:
 
    ``` c++
    SoftwareSerial serial(rx, tx);
-   module4g m4g(&serial);
+   module4g m4g(&serial, id);
    ```
 
-2. `module4g(uint8_t rx, uint8_t tx, uint8_t baud)`: Constructor, construct a 4G Module binded to a software serial port whose RX port is `rx`, TX port is `tx` and baudrate is `baud`. Usage:
+2. `module4g(uint8_t rx, uint8_t tx, int baud, String id)`: Constructor, construct a 4G Module binded to a software serial port whose RX port is `rx`, TX port is `tx` and baudrate is `baud`. Usage:
 
    ``` c++
-   module4g m4g(rx, tx, baud);
+   module4g m4g(rx, tx, baud, id);
    ```
 
 3. `int initModule()`: Initialize 4G module to default work mode. See details in `4G_Module_Brief.md`. Return 1 if initialized successfully, else return 0. Usage:
@@ -71,7 +71,7 @@ Notice: The 4G Module requires a valid connection to your server, please setup y
    {
    	if(m4g.initModule())  //m4g is a 4G module defined and initialized before;
        {
-           //TODO: Success boot
+           //TODO: Handle SUCCEEDED boot
        }
        else
        {

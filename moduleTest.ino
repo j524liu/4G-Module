@@ -2,7 +2,7 @@
 
 // SoftwareSerial mSerial(2, 3);
 // module4g m4g(&mSerial);
-module4g m4g(2, 3, 9600);
+module4g m4g(2, 3, 9600, "000001-01");
 
 void setup() {
   // put your setup code here, to run once:
@@ -35,7 +35,7 @@ void loop() {
     if(rst != "\0")
     {
       Serial.print(rst);
-      String res = m4g.sendData("Hello from 4G\n");
+      String res = m4g.sendData(m4g.getId() + "\n");
       Serial.print(res);
     }
     else

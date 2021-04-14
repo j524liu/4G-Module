@@ -11,12 +11,12 @@ class module4g
      * 
      * Constructor
      */
-    module4g(SoftwareSerial * serial);
+    module4g(SoftwareSerial * serial, String id);
     /*******
      * 
      * Constructor
      */
-    module4g(uint8_t rx, uint8_t tx, int baud);
+    module4g(uint8_t rx, uint8_t tx, int baud, String id);
     /*******
      *
      * Initiate module
@@ -37,8 +37,14 @@ class module4g
      * Send Data to 4g module
      */
     String sendData(String mdata);
+    /*******
+     *
+     *Get device ID
+     */
+    String getId();
   private:
     SoftwareSerial * mSerial;
+    String id;
 };
 
 #endif
