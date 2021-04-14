@@ -1,4 +1,4 @@
-# 4G Module for Arduino [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)![C++ Bange](https://img.shields.io/badge/language-C++-#F34B7D.svg)
+# 4G Module for Arduino [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme) ![C++ Badge](https://img.shields.io/badge/language-C%2B%2B-%23F34B7D.svg)
 
 Please read this file before using this module.
 
