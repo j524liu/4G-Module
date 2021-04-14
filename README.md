@@ -1,24 +1,13 @@
-# 4G Module for Arduino [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme) ![C++ Badge](https://img.shields.io/badge/language-C%2B%2B-%23F34B7D.svg)
+# 4G Module for Arduino ![C++ Badge](https://img.shields.io/badge/language-C%2B%2B-%23F34B7D.svg)
 
 Please read this file before using this module.
 
 ## Table of Contents
 
-- [Security](#security)
-- [Background](#background)
 - [Install](#install)
 - [Usage](#usage)
 - [API](#api)
 - [Contributing](#contributing)
-- [License](#license)
-
-## Security
-
-### Any optional sections
-
-## Background
-
-### Any optional sections
 
 ## Install
 
@@ -48,21 +37,50 @@ This module depends upon [SoftwareSerial](https://www.arduino.cc/en/Reference/So
 
 4. Enjoy!
 
-### Any optional sections
+### If you don't have a Git client setup
+You can also download the .zip file. If so, replace `step 1` with `Unzip .zip file`:
+``` bash
+unzip <file_name>.zip
+```
 
 ## Usage
 
-```
+`module_test.ino` is a simple demo to show how to create and configure a 4G module, how to send data to it.
 
-```
-
-Note: The `license` badge image link at the top of this file should be updated with the correct `:user` and `:repo`.
-
-### Any optional sections
+Notice: The 4G Module requires a valid connection to your server, please setup your server correctly.
 
 ## API
 
-### Any optional sections
+1. `module4g(SoftwareSerial * serial)`: Constructor, construct a 4G Module binded to a software serial port. Usage:
+
+   ``` c++
+   SoftwareSerial serial(rx, tx);
+   module4g m4g(&serial);
+   ```
+
+2. `module4g(uint8_t rx, uint8_t tx, uint8_t baud)`: Constructor, construct a 4G Module binded to a software serial port whose RX port is `rx`, TX port is `tx` and baudrate is `baud`. Usage:
+
+   ``` c++
+   module4g m4g(rx, tx, baud);
+   ```
+
+3. `int initModule()`: Initialize 4G module to default work mode. See details in `4G_Module_Brief.md`. Usage:
+
+   ```c++
+   void setup()
+   {
+   	if(initModule())
+       {
+           //TODO: Success boot
+       }
+       else
+       {
+           //TODO: Handle FAILED boot
+       }
+   }
+   ```
+
+   
 
 ## More optional sections
 
@@ -73,9 +91,3 @@ See [the contributing file](CONTRIBUTING.md)!
 PRs accepted.
 
 Small note: If editing the Readme, please conform to the [standard-readme](https://github.com/RichardLitt/standard-readme) specification.
-
-### Any optional sections
-
-## License
-
-[MIT © Richard McRichface.](../LICENSE)
