@@ -35,7 +35,8 @@ void loop() {
     if(rst != "\0")
     {
       Serial.print(rst);
-      String res = m4g.sendData(m4g.getId() + "\n");
+      String mData = "{\"id\":\"" + m4g.getId() + "\",\"data\":{\"geo\":\"11635.8418,3995.5835\",\"t\":\"120421132710\",\"temp\":\"165\",\"pm25\":\"930\",\"wind\":\"40NE\"}}";
+      String res = m4g.sendData(mData + "\n");
       Serial.print(res);
     }
     else
