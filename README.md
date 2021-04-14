@@ -1,11 +1,6 @@
-# Title
+# 4G Module for Arduino [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)![C++ Bange](https://img.shields.io/badge/language-C++-#F34B7D.svg)
 
-# [![license](https://img.shields.io/github/license/j524liu/4G-Module.svg)](LICENSE)
-[![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
-
-This is an example file with maximal choices selected.
-
-This is a long description.
+Please read this file before using this module.
 
 ## Table of Contents
 
@@ -27,11 +22,31 @@ This is a long description.
 
 ## Install
 
-This module depends upon a knowledge of [Markdown]().
+This module depends upon [SoftwareSerial](https://www.arduino.cc/en/Reference/SoftwareSerial) class.
 
-```
+1. In your work directory or where you like, run ` git clone` to get this module:
 
-```
+   ```
+   git clone https://github.com/j524liu/4G-Module.git
+   ```
+
+2. Copy `src/module4g.h` and `src/module4g.cpp` to your work directory:
+
+   ```bash
+   ##In case of Linux
+   cp ./src/module4g.* <your_work_dir>/
+   ##In case of Windows
+   copy src/module4g.* <your_work_dir>/
+   ```
+
+3. In your Arduino project, include the header file `module4g.h`:
+
+   ``` c++
+   #include "module4g.h"
+   //your codes...
+   ```
+
+4. Enjoy!
 
 ### Any optional sections
 
