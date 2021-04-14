@@ -69,7 +69,7 @@ Notice: The 4G Module requires a valid connection to your server, please setup y
    ```c++
    void setup()
    {
-   	if(initModule())
+   	if(m4g.initModule())  //m4g is a 4G module defined and initialized before;
        {
            //TODO: Success boot
        }
